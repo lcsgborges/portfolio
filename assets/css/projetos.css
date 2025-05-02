@@ -1,0 +1,75 @@
+#projetos {
+  padding: 2rem 2rem;
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+h2 {
+  font-size: 10rem;
+  color: var(--primary-neon);
+  margin-bottom: 5rem;
+  margin-top: 0.9em;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 60%;
+  height: 50em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item h3 {
+  font-size: 2rem;
+  color: var(--primary-neon);
+  margin-bottom: 1em;
+}
+
+.carousel-item p {
+  font-size: 1.2rem;
+  color: var(--light-color);
+}
+
+button.prev,
+button.next {
+  all: unset;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  color: var(--primary-neon);
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+button.prev {
+  left: 4rem;
+}
+
+button.next {
+  right: 4rem;
+}
+
+button:hover {
+  text-shadow: 0 0 8px var(--hover-neon);
+  transform: translateY(-50%) scale(1.2);
+}

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --dark-color: #111111;
+  --light-color: #fafafa;
+  --primary-neon: #00ffff;
+  --hover-neon: #094444;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto Flex", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-color);
+  overflow-x: hidden;
+}
