@@ -39,11 +39,6 @@
   line-height: 1.6;
 }
 
-.about-text span {
-  color: var(--primary-neon);
-  font-weight: 600;
-}
-
 @keyframes borderAnimation {
   0% {
     box-shadow: 0 0 20px var(--primary-neon), 0 0 40px var(--primary-neon);
