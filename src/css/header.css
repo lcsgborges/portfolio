@@ -2,7 +2,7 @@
   background-color: var(--dark-color);
   color: var(--light-color);
   width: 100%;
-  height: 8em;
+  height: 8rem;
   display: flex;
   align-items: center;
   box-shadow: 0 0 20px var(--primary-neon);
@@ -12,36 +12,36 @@
   top: 0;
 }
 
-.header-container {
+.header-navigation {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
-  backdrop-filter: blur(8px);
+  justify-content: space-between;
   padding: 0 2rem;
+  flex-wrap: wrap;
+  margin: 0 10rem;
 }
 
-.header-container h1 {
-  font-size: 3em;
+.header-navigation h1 {
+  font-size: 3rem;
+  white-space: nowrap;
+  letter-spacing: 0.1rem;
 }
 
-.header-container ul,
-a {
+.header-navigation ul {
   display: flex;
   gap: 5rem;
   list-style: none;
-  text-decoration: none;
-  color: var(--light-color);
 }
 
-.header-container ul li {
+.header-navigation ul li {
   font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.header-container ul li::after {
+.header-navigation ul li::after {
   content: "";
   position: absolute;
   bottom: -0.4rem;
@@ -52,23 +52,76 @@ a {
   transition: width 0.3s ease;
 }
 
-.header-container ul li:hover::after {
+.header-navigation ul li:hover::after {
   width: 100%;
 }
 
-.header-container ul li:hover {
+.header-navigation ul li:hover {
   color: var(--primary-neon);
   text-shadow: 0 0 6px var(--hover-neon);
 }
 
-.header-container ul li a.active {
+.header-navigation ul li a.active {
   color: var(--primary-neon);
   text-shadow: 0 0 6px var(--primary-neon);
   text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-color);
 }
 
 a i {
   font-size: 2rem;
   color: var(--primary-neon);
   transition: color 0.3s ease;
+}
+
+@media (max-width: 1250px) {
+  .header-navigation {
+    margin: 0 4rem;
+  }
+
+  .header-navigation h1 {
+    display: none;
+  }
+  .header-navigation ul {
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .header-navigation {
+    margin: 0;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .header-navigation h1 {
+    display: none;
+  }
+
+  .header-navigation ul {
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-navigation ul li {
+    font-size: 1.2rem;
+  }
 }
