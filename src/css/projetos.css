@@ -18,7 +18,7 @@
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
   row-gap: 5rem;
   max-width: 90%;
@@ -33,7 +33,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.project-item img:hover{
+.project-item img:hover {
   cursor: pointer;
 }
 
@@ -49,14 +49,35 @@
   text-decoration: underline;
 }
 
-@media(max-width: 1250px){
+@media (max-width: 1250px) {
   .projects h2 {
     font-size: 10rem;
   }
 }
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
+  .projects {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
   .projects h2 {
-    font-size: 6rem;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-item img {
+    height: 20em;
+    border-radius: 8px;
+  }
+
+  .project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
   }
 }

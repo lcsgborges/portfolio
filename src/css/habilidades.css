@@ -34,35 +34,47 @@
   transition: color 0.3s ease;
 }
 
-@media(max-width:1250px){
-
-  .habilidades{
+@media (max-width: 1250px) {
+  .habilidades {
     padding: 10rem;
   }
 
-  .habilidades h2{
-    font-size:10rem;
+  .habilidades h2 {
+    font-size: 10rem;
   }
 }
 
-@media(max-width:900px){
-
-  .habilidades{
+@media (max-width: 900px) {
+  .habilidades {
     padding: 8rem;
   }
 
-  .habilidades h2{
-    font-size:8rem;
+  .habilidades h2 {
+    font-size: 8rem;
   }
 }
 
-@media(max-width:600px){
-
-  .habilidades{
-    padding: 6rem;
+@media (max-width: 600px) {
+  .habilidades {
+    padding: 4rem;
   }
 
-  .habilidades h2{
-    font-size:6rem;
+  .habilidades h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-container {
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tech-item i {
+    font-size: 4rem;
+  }
+
+  .tech-item p {
+    font-size: 1rem;
   }
 }
