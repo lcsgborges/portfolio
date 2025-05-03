@@ -12,8 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             projects = data;
 
-            document.querySelectorAll(".carousel-item h3").forEach((title, index) => {
+            document.querySelectorAll(".project-item h3").forEach((title, index) => {
                 title.addEventListener("click", () => {
+                    const project = projects[index];
+                    modalTitle.textContent = project.title;
+                    modalDescription.innerHTML = project.description;
+                    modalLink.href = project.link;
+                    modal.style.display = "flex";
+                });
+            });
+            document.querySelectorAll(".project-item img").forEach((image, index) => {
+                image.addEventListener("click", () => {
                     const project = projects[index];
                     modalTitle.textContent = project.title;
                     modalDescription.innerHTML = project.description;
