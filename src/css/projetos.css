@@ -72,12 +72,16 @@
   }
 
   .project-item img {
-    height: 20em;
+    width: 80%;
+    max-width: 30rem;
+    height: auto;
+    margin: 0 auto;
     border-radius: 8px;
   }
 
   .project-item h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5em;
+    text-align: center;
   }
 }
