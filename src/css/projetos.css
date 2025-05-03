@@ -1,9 +1,11 @@
 .projects {
-  padding: 2rem 2rem;
+  padding: 2rem;
   text-align: center;
   background-color: var(--background-color);
-  height: calc(100% - 8rem);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 2rem;
 }
 
 .projects h2 {
@@ -11,11 +13,12 @@
   color: var(--primary-neon);
   margin-bottom: 5rem;
   margin-top: 0.9rem;
+  padding-top: 3rem;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   gap: 2rem;
   row-gap: 5rem;
   max-width: 90%;
