@@ -236,3 +236,18 @@ a i:hover {
     font-size: 1.6rem;
   }
 }
+
+/* Ensure hamburger menu is visible and clickable */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    z-index: 1001;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    display: block;
+    background: var(--primary-accent);
+  }
+}

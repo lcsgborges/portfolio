@@ -1,4 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Enhanced.js loaded'); // Debug log
+    
+    // Mobile menu functionality - Initialize early
+    function initMobileMenu() {
+        const navigation = document.querySelector('.header-navigation');
+        const navList = document.querySelector('.header-navigation ul');
+        
+        if (!navigation || !navList) {
+            console.error('Navigation elements not found');
+            return;
+        }
+        
+        // Create hamburger menu
+        const hamburger = document.createElement('div');
+        hamburger.className = 'hamburger';
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        
+        // Insert hamburger menu after the h1 element
+        const h1Element = navigation.querySelector('h1');
+        h1Element.insertAdjacentElement('afterend', hamburger);
+        
+        console.log('Hamburger menu created'); // Debug log
+        
+        hamburger.addEventListener('click', function(e) {
+            console.log('Hamburger clicked'); // Debug log
+            e.stopPropagation();
+            this.classList.toggle('active');
+            navList.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navItems = document.querySelectorAll('a[href^="#"]');
+        navItems.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navigation.contains(e.target) && navList.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        return hamburger;
+    }
+    
+    // Initialize mobile menu immediately
+    const hamburgerElement = initMobileMenu();
     
     // Create floating particles
     function createParticles() {
@@ -88,41 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', updateActiveSection);
-    
-    // Mobile menu functionality
-    const hamburger = document.createElement('div');
-    hamburger.className = 'hamburger';
-    hamburger.innerHTML = '<span></span><span></span><span></span>';
-    
-    const navigation = document.querySelector('.header-navigation');
-    const navList = document.querySelector('.header-navigation ul');
-    
-    // Insert hamburger menu
-    navigation.appendChild(hamburger);
-    
-    hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navList.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-    
-    // Close mobile menu when clicking on a link
-    navItems.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navList.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navigation.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navList.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
     
     // Intersection Observer for animations
     const observerOptions = {
@@ -261,9 +281,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             // Close mobile menu
-            hamburger.classList.remove('active');
-            navList.classList.remove('active');
-            document.body.classList.remove('menu-open');
+            const hamburger = document.querySelector('.hamburger');
+            const navList = document.querySelector('.header-navigation ul');
+            if (hamburger && navList) {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
             
             // Close modal
             const modal = document.getElementById('modal');
@@ -316,15 +340,29 @@ style.textContent = `
         100% { transform: rotate(360deg); }
     }
     
+    /* Enhanced hamburger styles */
+    .hamburger {
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .hamburger:hover {
+        background: rgba(100, 255, 218, 0.1);
+    }
+    
     @media (max-width: 768px) {
         body.menu-open .header-navigation ul {
-            right: 0;
+            right: 0 !important;
         }
         
         .cursor,
         .cursor-follower,
         .particles {
             display: none;
+        }
+        
+        .hamburger {
+            display: flex !important;
         }
     }
 `;
