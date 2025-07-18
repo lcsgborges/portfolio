@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Lucas Guimarães Borges: https://www.github.com/lcsgborges">
-    <meta name="keywords" content="portfolio css html javascript github development">
-    <meta name="description" content="my personal portfolio">
+    <meta name="keywords" content="portfolio css html javascript github development web developer engenharia software">
+    <meta name="description" content="Portfólio de Lucas Guimarães Borges - Estudante de Engenharia de Software, desenvolvedor web especializado em tecnologias modernas">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/images/letraL.png">
+    
+    <!-- Preconnect for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="src/css/global.css">
     <link rel="stylesheet" href="src/css/header.css">
     <link rel="stylesheet" href="src/css/footer.css">
@@ -16,29 +26,33 @@
     <link rel="stylesheet" href="src/css/modal.css">
     <link rel="stylesheet" href="src/css/habilidades.css">
     <link rel="stylesheet" href="src/css/contatos.css">
+    <link rel="stylesheet" href="src/css/effects.css">
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <title>Lucas G. Borges</title>
+    
+    <title>Lucas G. Borges - Engenheiro de Software</title>
 </head>
 
 <body>
     <header class="header">
         <nav class="header-navigation">
-            <h1>
-                Lucas Guimarães Borges
-            </h1>
+            <h1><a href="#">Lucas Guimarães Borges</a></h1>
             <ul>
-                <li><a href="#sobre">Sobre mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contato">Contatos</a></li>
-                <li><a href="https://github.com/lcsgborges" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="#sobre" aria-label="Ir para seção Sobre mim">Sobre mim</a></li>
+                <li><a href="#projetos" aria-label="Ir para seção Projetos">Projetos</a></li>
+                <li><a href="#habilidades" aria-label="Ir para seção Habilidades">Habilidades</a></li>
+                <li><a href="#contato" aria-label="Ir para seção Contatos">Contatos</a></li>
+                <li><a href="https://github.com/lcsgborges" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil no GitHub"><i class="fab fa-github"></i></a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
         <section class="about" id="sobre">
             <div class="about-image">
-                <img src="src/images/me.jpeg" alt="Foto de Lucas Guimarães Borges">
+                <img src="src/images/me.jpeg" alt="Foto de Lucas Guimarães Borges" loading="lazy">
             </div>
             <div class="about-text">
                 <h2>Sobre mim</h2>
@@ -87,55 +101,63 @@
             <h2>Minhas Habilidades</h2>
             <div class="tech-container">
                 <div class="tech-item">
-                    <i class="devicon-html5-plain colored fa-3x"></i>
+                    <i class="devicon-html5-plain colored" style="font-size: 4rem;"></i>
                     <p>HTML5</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-css3-plain colored fa-3x"></i>
+                    <i class="devicon-css3-plain colored" style="font-size: 4rem;"></i>
                     <p>CSS3</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-javascript-plain colored fa-3x"></i>
+                    <i class="devicon-javascript-plain colored" style="font-size: 4rem;"></i>
                     <p>JavaScript</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-react-original colored fa-3x"></i>
+                    <i class="devicon-react-original colored" style="font-size: 4rem;"></i>
                     <p>React</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-nodejs-plain colored fa-3x"></i>
+                    <i class="devicon-nodejs-plain colored" style="font-size: 4rem;"></i>
                     <p>Node.js</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-express-original colored fa-3x"></i>
+                    <i class="devicon-express-original colored" style="font-size: 4rem;"></i>
                     <p>Express</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-python-plain colored"></i>
+                    <i class="devicon-python-plain colored" style="font-size: 4rem;"></i>
                     <p>Python</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-django-plain colored fa-3x"></i>
+                    <i class="devicon-django-plain colored" style="font-size: 4rem;"></i>
                     <p>Django</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-c-plain colored fa-3x"></i>
+                    <i class="devicon-fastapi-plain colored" style="font-size: 4rem;"></i>
+                    <p>FastAPI</p>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-c-plain colored" style="font-size: 4rem;"></i>
                     <p>C</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-postgresql-plain colored fa-3x"></i>
+                    <i class="devicon-postgresql-plain colored" style="font-size: 4rem;"></i>
                     <p>PostgreSQL</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-sqlite-plain colored fa-3x"></i>
+                    <i class="devicon-sqlite-plain colored" style="font-size: 4rem;"></i>
                     <p>SQLite</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-mongodb-plain colored fa-3x"></i>
+                    <i class="devicon-mongodb-plain colored" style="font-size: 4rem;"></i>
                     <p>MongoDB</p>
                 </div>
                 <div class="tech-item">
-                    <i class="devicon-git-plain colored fa-3x"></i>
+                    <i class="devicon-supabase-plain colored" style="font-size: 4rem;"></i>
+                    <p>Supabase</p>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-git-plain colored" style="font-size: 4rem;"></i>
                     <p>Git</p>
                 </div>
             </div>
@@ -160,36 +182,38 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/lucas-guimaraes-dev/" target="_blank">
-                        <i class="fab fa-linkedin fa-3x"></i>
+                    <a href="https://www.linkedin.com/in/lucas-guimaraes-dev/" target="_blank" rel="noopener noreferrer" aria-label="Conectar no LinkedIn">
+                        <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com/lcsgborges/" target="_blank">
-                        <i class="fab fa-instagram fa-3x"></i>
+                    <a href="https://www.instagram.com/lcsgborges/" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/@lcsgborges" target="_blank">
-                        <i class="fab fa-youtube fa-3x"></i>
+                    <a href="https://www.youtube.com/@lcsgborges" target="_blank" rel="noopener noreferrer" aria-label="Inscrever-se no YouTube">
+                        <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://github.com/lcsgborges" target="_blank">
-                        <i class="fab fa-github fa-3x"></i>
-
+                    <a href="https://github.com/lcsgborges" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil no GitHub">
+                        <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
         </section>
-   
+    </main>
 
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 Lucas G. Borges. Todos os direitos reservados.</p>
             <ul class="footer-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contatos">Contato</a></li>
+                <li><a href="#sobre" aria-label="Ir para seção Sobre">Sobre</a></li>
+                <li><a href="#projetos" aria-label="Ir para seção Projetos">Projetos</a></li>
+                <li><a href="#habilidades" aria-label="Ir para seção Habilidades">Habilidades</a></li>
+                <li><a href="#contato" aria-label="Ir para seção Contatos">Contato</a></li>
             </ul>
         </div>
     </footer>
+    
+    <!-- JavaScript -->
     <script src="src/js/modal.js"></script>
+    <script src="src/js/enhanced.js"></script>
 </body>
 
 </html>

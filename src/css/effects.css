@@ -1,0 +1,251 @@
+/* Efeitos especiais e melhorias visuais */
+
+/* Particles background effect */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--primary-accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Typing effect for titles */
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary-accent); }
+}
+
+/* Enhanced glassmorphism cards */
+.enhanced-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.7s ease;
+}
+
+.enhanced-glass:hover::before {
+  left: 100%;
+}
+
+/* Floating elements animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulsing glow effect */
+.pulse-glow {
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 20px var(--primary-accent);
+  }
+  to {
+    box-shadow: 0 0 40px var(--primary-accent), 0 0 60px var(--primary-accent);
+  }
+}
+
+/* Text reveal animation */
+.text-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-color);
+  animation: reveal 1.5s ease-out forwards;
+}
+
+@keyframes reveal {
+  to {
+    left: 100%;
+  }
+}
+
+/* Matrix-like background effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.1;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  color: var(--primary-accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 14px;
+  animation: matrix-fall 10s linear infinite;
+}
+
+@keyframes matrix-fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Magnetic effect for buttons */
+.magnetic {
+  transition: transform 0.3s ease;
+}
+
+.magnetic:hover {
+  transform: scale(1.05);
+}
+
+/* Neon border animation */
+.neon-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--dark-color), var(--dark-color)) padding-box,
+              var(--gradient-primary) border-box;
+  animation: neon-border-animation 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon-border-animation {
+  0% {
+    box-shadow: 0 0 5px var(--primary-accent);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--primary-accent), 0 0 30px var(--primary-accent);
+  }
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--glass-border);
+  border-top: 4px solid var(--primary-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .particles {
+    display: none;
+  }
+  
+  .matrix-bg {
+    display: none;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 480px) {
+  .floating,
+  .pulse-glow,
+  .enhanced-glass::before {
+    animation: none;
+  }
+  
+  .enhanced-glass:hover::before {
+    display: none;
+  }
+}
+
+/* High performance mode for older devices */
+@media (prefers-reduced-motion: reduce) {
+  .floating,
+  .pulse-glow,
+  .particle,
+  .matrix-column,
+  .neon-border {
+    animation: none !important;
+  }
+  
+  .enhanced-glass::before {
+    display: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .particles,
+  .matrix-bg {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .header {
+    position: static;
+    background: white;
+    color: black;
+  }
+}
