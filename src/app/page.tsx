@@ -7,6 +7,9 @@ import { useState } from 'react'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
+  // BasePath para GitHub Pages
+  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -42,7 +45,7 @@ export default function Home() {
                 Contato
               </a>
               <a 
-                href="/curriculo.pdf" 
+                href={`${basePath}/curriculo.pdf`}
                 download
                 className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300"
               >
@@ -92,7 +95,7 @@ export default function Home() {
                 Contato
               </a>
               <a 
-                href="/curriculo.pdf" 
+                href={`${basePath}/curriculo.pdf`}
                 download
                 className="block bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 text-center"
               >
@@ -121,7 +124,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
                 <a 
-                  href="/curriculo.pdf" 
+                  href={`${basePath}/curriculo.pdf`}
                   download
                   className="inline-flex items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 hover:scale-105 shadow-lg"
                 >
