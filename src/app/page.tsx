@@ -8,8 +8,8 @@ import { useState } from 'react'
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   
-  // BasePath para GitHub Pages
-  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
+  // BasePath raiz
+  const basePath = ''
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
